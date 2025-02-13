@@ -3,7 +3,7 @@ import io
 
 client = vision.ImageAnnotatorClient.from_service_account_file('computer-vision.json')
 
-image_path = "sailboat.jpg"
+image_path = "Cat_image.jpg"
 
 with io.open(image_path, 'rb') as image_file:
     content = image_file.read()
@@ -21,7 +21,7 @@ try:
 except Exception as e:
     print(f"Error:{e}")
 
-text_image_path = "pic_with_text.png"
+text_image_path = "text_image.jpeg"
 
 with io.open(text_image_path, 'rb') as text_image_file:
     content_in_image = text_image_file.read()
