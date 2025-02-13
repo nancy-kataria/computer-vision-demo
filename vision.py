@@ -20,3 +20,24 @@ try:
 
 except Exception as e:
     print(f"Error:{e}")
+
+text_image_path = "pic_with_text.png"
+
+with io.open(text_image_path, 'rb') as text_image_file:
+    content_in_image = text_image_file.read()
+
+text_image = vision.Image(content=content_in_image)
+
+try:
+    response = client.text_detection(image=text_image)
+
+    texts = response.text_annotations
+
+    for text in texts:
+        print(text)
+
+    print(texts[0].description)
+
+except Exception as e:
+    print(f"Error:{e}")
+
