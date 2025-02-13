@@ -10,5 +10,13 @@ with io.open(image_path, 'rb') as image_file:
 
 image = vision.Image(content=content)
 
-response =client.label_detection(image=image)
+try:
+    response = client.label_detection(image=image)
 
+    labels = response.label_annotations
+
+    for label in labels:
+        print(label.description, label.score)
+
+except Exception as e:
+    print(f"Error:{e}")
