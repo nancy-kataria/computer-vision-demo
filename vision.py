@@ -1,18 +1,22 @@
 from google.cloud import vision
 import io
 
+# Creating an authenticated Vision API client.
 client = vision.ImageAnnotatorClient.from_service_account_file('computer-vision.json')
 
 image_path = "Cat_image.jpg"
 
+# Reading the image file as binary content, rb- read binary
 with io.open(image_path, 'rb') as image_file:
     content = image_file.read()
 
+# creating an instance of the image class and binary data is fed in
 image = vision.Image(content=content)
 
 try:
     response = client.label_detection(image=image)
 
+    # getting all label tags
     labels = response.label_annotations
 
     for label in labels:
