@@ -29,18 +29,18 @@ client = vision.ImageAnnotatorClient.from_service_account_file('/path/to/your/se
 ## How It Works
 
 ### **1. Label Detection (Object Recognition)**
-This script reads an image file (`sailboat.jpg`) and sends it to the Vision API to detect objects and labels.
+This script reads an image file (`Cat_image.jpg`) and sends it to the Vision API to detect objects and labels.
 
 ### **2. Text Detection (OCR)**
-It reads another image (`pic_with_text.png`) to extract and print the text found in the image.
+It reads another image (`text_image.jpeg`) to extract and print the text found in the image.
 
 ## Usage
 
-1. Place your images (`sailboat.jpg` and `pic_with_text.png`) in the same directory as the script.
+1. Place your images (`Cat_image.jpg` and `text_image.jpeg`) in the same directory as the script.
 2. Run the script:
 
 ```bash
-python script.py
+python vision.py
 ```
 
 
